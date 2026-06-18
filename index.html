@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARSIL - Produtividade e Rentabilidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LARSIL</h1>
+            <div class="greeting" id="greeting"></div>
+            <div class="date-time" id="dateTime"></div>
+        </header>
+
+        <main>
+            <!-- Timer Section -->
+            <section class="timer-section">
+                <div class="timer-display">
+                    <div class="flip-clock">
+                        <div class="flip-unit">
+                            <span id="flipH">00</span>
+                            <div class="label">H</div>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="flip-unit">
+                            <span id="flipM">00</span>
+                            <div class="label">M</div>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="flip-unit">
+                            <span id="flipS">00</span>
+                            <div class="label">S</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button id="btnStart" class="btn btn-primary">Iniciar</button>
+                    <button id="btnPause" class="btn btn-warning" style="display:none;">Pausar</button>
+                    <button id="btnResume" class="btn btn-info" style="display:none;">Continuar</button>
+                    <button id="btnStop" class="btn btn-danger" style="display:none;">Parar</button>
+                </div>
+            </section>
+
+            <!-- USD Exchange Rate Section -->
+            <section class="usd-section">
+                <div class="usd-card">
+                    <div class="usd-label">Dólar Atualizado</div>
+                    <div class="usd-value" id="usdValue">R$ --</div>
+                    <div class="usd-updated" id="usdUpdated">Atualizado há poucos segundos</div>
+                </div>
+            </section>
+
+            <!-- Activity Timer Section -->
+            <section class="activity-section">
+                <h2>Atividades</h2>
+                <div class="activity-input">
+                    <input type="text" id="activityInput" placeholder="Descreva a atividade...">
+                    <button id="btnAddActivity" class="btn btn-success">Adicionar</button>
+                </div>
+                <div class="activity-list" id="activityList"></div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="tasks-section">
+                <h2>Tarefas</h2>
+                <div class="task-input">
+                    <input type="text" id="taskInput" placeholder="Nova tarefa...">
+                    <button id="btnAddTask" class="btn btn-success">Adicionar</button>
+                </div>
+                <div class="task-list" id="taskList"></div>
+            </section>
+
+            <!-- Notes Section -->
+            <section class="notes-section">
+                <h2>Notas</h2>
+                <div class="notes-input">
+                    <textarea id="notesInput" placeholder="Escreva suas notas..." rows="4"></textarea>
+                    <button id="btnSaveNotes" class="btn btn-success">Salvar</button>
+                </div>
+                <div class="notes-display" id="notesDisplay"></div>
+            </section>
+
+            <!-- Export Section -->
+            <section class="export-section">
+                <h2>Exportar</h2>
+                <div class="export-buttons">
+                    <button id="btnExportJSON" class="btn btn-info">Exportar JSON</button>
+                    <button id="btnExportPPTX" class="btn btn-info">Exportar Apresentação</button>
+                    <button id="btnExportCSV" class="btn btn-info">Exportar CSV</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Library Scripts -->
+    <script src="lib/chart.umd.min.js"></script>
+    <script src="lib/jszip.min.js"></script>
+    <script src="lib/pptxgen.bundle.js"></script>
+    <script src="template_b64.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
